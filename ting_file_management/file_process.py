@@ -28,14 +28,20 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
-
+    # se o tamanho dessa instancia for > q zero...
+    if len(instance) > 0:
+        # estamos removendo
+        removed = instance.dequeue()['nome_do_arquivo']
+        return sys.stdout.write(f'Arquivo {removed} removido com sucesso\n')
+    return sys.stdout.write('Não há elementos\n')
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
 
 
-# para rodar no terminal => python3 -m pytest tests/test_file_process.py
+# para rodar no terminal => python -m ting_file_management.file_process
 # if __name__ == "__main__":
-#     test1 = Queue()
-#     print(process('statics/arquivo_teste.txt', test1))
+#     test = Queue()
+#     print(process('statics/arquivo_teste.txt', test))
+#     # testando se o arquivo foi removido
+#     remove(test)

@@ -35,6 +35,7 @@ def remove(instance):
         return sys.stdout.write(f'Arquivo {removed} removido com sucesso\n')
     return sys.stdout.write('Não há elementos\n')
 
+
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
 

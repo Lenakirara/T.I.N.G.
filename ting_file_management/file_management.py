@@ -13,7 +13,7 @@ def txt_importer(path_file):
             # separamos a a linha usando split()
             data_file = file_txt.read().split('\n')
             return data_file
-    except:
+    except FileNotFoundError:
         return sys.stderr.write(f'Arquivo {path_file} não encontrado\n')
 
 

@@ -41,7 +41,7 @@ def remove(instance):
 def file_metadata(instance, position):
     try:
         data_search = instance.search(position)
-        # 5.1 - executa as info 
+        # 5.1 - executa as info
         return sys.stdout.write(str(data_search))
     # exceção se o indice não existir
     except IndexError:

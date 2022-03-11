@@ -10,9 +10,11 @@ def txt_importer(path_file):
         return sys.stderr.write('Formato inválido\n')
     try:
         with open(path_file, 'r') as file_txt:
-            # separamos a a linha usando split()
+            # separamos a linha usando split()
             data_file = file_txt.read().split('\n')
             return data_file
+    # tratamento erros:
+    # https://www.hashtagtreinamentos.com/try-e-except-no-python?gclid=CjwKCAiAg6yRBhBNEiwAeVyL0BrU0Tuf2FS7koljKUhYWriFV14tOjsX2rO14Y_f6PSSUdqSHOZ29RoCzb4QAvD_BwE
     except FileNotFoundError:
         return sys.stderr.write(f'Arquivo {path_file} não encontrado\n')
 

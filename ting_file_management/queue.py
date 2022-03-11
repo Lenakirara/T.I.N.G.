@@ -32,4 +32,4 @@ class Queue:
         # https://pythonhelp.wordpress.com/2012/12/31/deu-erro-e-agora-o-que-eu-faco/#:~:text=O%20IndexError%20significa%20que%20estamos,receber%20um%20IndexError%20na%20cabe%C3%A7a.
         if index < 0 or index > len(self._data):
             raise IndexError
-        return self._data[index]   
+        return self._data[index]

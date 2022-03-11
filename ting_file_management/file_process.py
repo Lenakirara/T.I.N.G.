@@ -36,8 +36,17 @@ def remove(instance):
     return sys.stdout.write('Não há elementos\n')
 
 
+# vendo as exceções:
+# https://docs.python.org/3/library/exceptions.html
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        data_search = instance.search(position)
+        # 5.1 - executa as info 
+        return sys.stdout.write(str(data_search))
+    # exceção se o indice não existir
+    except IndexError:
+        # 5.2 - acusa qdo a posição for incorreta
+        return sys.stderr.write('Posição inválida')
 
 
 # para rodar no terminal => python -m ting_file_management.file_process
@@ -46,3 +55,5 @@ def file_metadata(instance, position):
 #     print(process('statics/arquivo_teste.txt', test))
 #     # testando se o arquivo foi removido
 #     remove(test)
+#     file_metadata(test, 0)
+#     file_metadata(test, 1)

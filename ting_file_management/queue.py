@@ -25,7 +25,11 @@ class Queue:
 
     def search(self, index):
         # buscando um indice valido
-        # se indice for >= que 0 ou indice <= que tamanho dessa lista
-        if 0 <= index <= len(self._data):
-            return self._data[index]
-        raise IndexError
+        # troquei a sequencia da logica, pois imagino que seja mais correto
+        # deixar o else com retorno de uma busca valida
+        # principalmente pq o IndexError funciona qdo tentamos acessar uma
+        # posição que está fora do seu range
+        # https://pythonhelp.wordpress.com/2012/12/31/deu-erro-e-agora-o-que-eu-faco/#:~:text=O%20IndexError%20significa%20que%20estamos,receber%20um%20IndexError%20na%20cabe%C3%A7a.
+        if index < 0 or index > len(self._data):
+            raise IndexError
+        return self._data[index]   
